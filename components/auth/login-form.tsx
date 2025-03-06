@@ -31,7 +31,10 @@ export const LoginForm = () => {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
-  const [showTwoFactor, setShowTwoFactor] = useState(false);
+  const [
+    showTwoFactor,
+    //  setShowTwoFactor
+  ] = useState(false);
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -58,9 +61,9 @@ export const LoginForm = () => {
             setSuccess(data.success);
           }
 
-          if (data?.twoFactor) {
-            setShowTwoFactor(true);
-          }
+          // if (data?.twoFactor) {
+          //   setShowTwoFactor(true);
+          // }
         })
         .catch(() => setError("Something went wrong"));
     });
