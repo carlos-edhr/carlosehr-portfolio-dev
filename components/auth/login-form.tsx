@@ -60,7 +60,7 @@ export const LoginForm = () => {
             form.reset();
             setSuccess(data.success);
           }
-
+          //Two factor auth
           // if (data?.twoFactor) {
           //   setShowTwoFactor(true);
           // }
